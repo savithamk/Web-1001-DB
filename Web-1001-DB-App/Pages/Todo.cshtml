@@ -5,36 +5,3 @@
     ViewBag.SiteTitle = "Add items";
 }
 <p>There are @ViewData["NumTodos"] are available</p>
-<div class="container">
-    <br />
-    <div class="col-md-4 offset-md-4">
-        <form class="form-inline">
-            <div class="form-group mx-sm-3 mb-2">
-                <label for="addNew" class="sr-only">Add new</label>
-                <input type="text" class="form-control" id="newValue" placeholder="Add New">
-            </div>
-            <button type="submit" class="btn btn-primary mb-2">Add</button>
-        </form>
-    </div>
-    <div class="row">
-        <div class="col-md-4 offset-md-4 table-responsive-md">
-
-            <hr>
-            Show: <a href="#/pending" ng-class="{'active':filt==='pending'}"> Pending</a> | <a href="#/pending" ng-class="{'active':filt==='pending'}">Completed</a> | <a href="#/all" ng-class="{'active':filt==='all'}">All</a>
-            <hr>
-
-            <table class="table table-bordered">
-                <thead class="thead-dark">
-                <th>Description</th>
-                <th>Status</th>
-                </thead>
-                <tbody>
-                    <tr ng-repeat="ac in activities">
-                        <td>{{ac.activityName}}</td>
-                        <td><button class="btn btn-sm" ng-class="{'btn-danger': ac.status == false , 'btn-success': ac.status == true}" ng-click='changeStatus(ac.activityName,ac.status)'>{{convertStatus(ac.status)}}</button></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-</div>
